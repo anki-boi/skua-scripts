@@ -287,6 +287,14 @@ def main(argv: list[str]) -> int:
             line = f"pin {who} to room {args.room}: " + room_pin(online[who], args.room, tok)
             print(line)
             log.write(line + "\n")
+    else:
+        # A room pin lives in one shared options file, so a pin left by any earlier run
+        # rewrites every join into map-number and parks the accounts in whitemap. Release
+        # it when the run does not ask for a room, so a stale pin cannot wreck a chase.
+        for who in [args.carried] + carriers:
+            line = f"release the room pin on {who}: " + room_pin(online[who], 0, tok)
+            print(line)
+            log.write(line + "\n")
     while time.time() < deadline:
         time.sleep(args.follow_seconds)
         if args.room:
