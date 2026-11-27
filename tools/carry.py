@@ -84,14 +84,78 @@ def where(port: int, tok: str) -> tuple[str, int]:
     return str((data.get("map") or {}).get("name") or "?"), int(data.get("hpPercent") or 0)
 
 
+def room(port: int, tok: str) -> tuple[str, int, int]:
+    """(map, room id, players in the room). Two accounts on the same map name can still
+    sit in different rooms: that is what a solo-gated boss room looks like from outside."""
+    data = state(port, tok)
+    info = data.get("map") or {}
+    return (str(info.get("name") or "?"), int(info.get("roomId") or 0),
+            int(info.get("playerCount") or 0))
+
+
 def ensure_script(port: int, name: str, tok: str, force: bool = False) -> str:
+    """Start a script unless exactly that script is already running. A different script
+    running is not the thing we asked for: a carrier holding a zap must be replaced when
+    it is promoted to carry a story."""
     is_running, current = running(port, tok)
-    if is_running and not force:
+    wanted = os.path.basename(name).lower()
+    if is_running and not force and current.lower() == wanted:
         return f"kept {current}"
-    code, res = call(port, "/scripts/run", tok, {"name": name, "force": force, "silent": True})
+    # A different script is already loaded: replacing it needs force, or the client
+    # answers 409 script_already_running.
+    replace = force or (is_running and current.lower() != wanted)
+    code, res = call(port, "/scripts/run", tok, {"name": name, "force": replace, "silent": True})
     if code != 200:
         return f"start {name} FAILED {code} {json.dumps(res)[:110]}"
     return f"started {name}"
+
+
+def party(port: int, tok: str) -> dict:
+    """Who stands in this account's party. An empty answer is no party, not an error."""
+    code, res = call(port, "/party", tok)
+    if code != 200:
+        return {"leader": "", "members": [], "inParty": False, "error": str(res)[:80]}
+    return res.get("data") or {}
+
+
+def party_send(port: int, path: str, tok: str, body: dict | None = None) -> str:
+    code, res = call(port, path, tok, body or {})
+    return f"[{code}] {json.dumps(res.get('data') or res)[:90]}"
+
+
+def party_form(leader_port: int, names: list[str], tok: str, log) -> list[str]:
+    """Turn the party channel on, invite the list, and report who actually joined.
+
+    The invite needs a listener on the other side. AgentFollowZap v0.4 accepts invites
+    and summons through the library's own PartyManagement, so the carrier answers on its
+    own and this function only has to ask.
+    """
+    log.write("  party on: " + party_send(leader_port, "/party/on", tok) + "\n")
+    for name in names:
+        log.write(f"  invite {name}: " + party_send(leader_port, "/party/invite", tok, {"name": name}) + "\n")
+        time.sleep(3)
+
+    joined: list[str] = []
+    for _ in range(6):
+        time.sleep(4)
+        members = [str(m).lower() for m in (party(leader_port, tok).get("members") or [])]
+        joined = [n for n in names if n.lower() in members]
+        if len(joined) == len(names):
+            break
+    return joined
+
+
+def load_gated(path: str) -> dict[str, float]:
+    """Maps that will not take a second account, with the time to stop trying."""
+    try:
+        raw = json.loads(open(path, encoding="utf-8").read())
+    except (OSError, ValueError):
+        return {}
+    return {str(k): float(v) for k, v in raw.items()}
+
+
+def save_gated(path: str, gated: dict[str, float]) -> None:
+    open(path, "w", encoding="utf-8").write(json.dumps(gated, indent=1, sort_keys=True))
 
 
 def status(accounts: list[str], tok: str, zap: str, story: str) -> int:
@@ -102,9 +166,11 @@ def status(accounts: list[str], tok: str, zap: str, story: str) -> int:
             print(f"{who}: offline")
             continue
         map_name, hp = where(online[who], tok)
+        _, room_id, players = room(online[who], tok)
         is_running, script = running(online[who], tok)
-        role = "STORY " if script == story or (is_running and "AllStories" in script) else "carrier"
-        print(f"{who:<15} map {map_name:<16} hp {hp:>3}% running={is_running} script={script} {role}")
+        role = "STORY " if "AllStories" in script else "carrier"
+        print(f"{who:<15} map {map_name:<16} room {room_id:<8} players {players} hp {hp:>3}% "
+              f"running={is_running} script={script} {role}")
     return 0
 
 
@@ -117,8 +183,12 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--follow-seconds", type=int, default=25)
     ap.add_argument("--max-minutes", type=int, default=90)
     ap.add_argument("--status", action="store_true", help="read only, change nothing")
+    ap.add_argument("--gate-minutes", type=int, default=12,
+                    help="how long to leave a solo-gated map alone after finding one")
     ap.add_argument("--restart-story", action="store_true",
                     help="restart the story script even if it is already running")
+    ap.add_argument("--no-party", action="store_true",
+                    help="follow by joining the map name instead of the party (each account lands in its own room)")
     ap.add_argument("--accounts", default="", help="who to list with --status")
     ap.add_argument("--log", default="carry.log")
     args = ap.parse_args()
@@ -147,28 +217,70 @@ def main(argv: list[str]) -> int:
     for who in carriers:
         print(f"carrier {who}: {ensure_script(online[who], args.zap, tok, force=True)}")
 
+    # The party is the only thing that puts two accounts in one room, so build it while
+    # the carriers are listening: their zap script accepts the invite and every summon.
+    party_members: list[str] = []
+    if args.no_party:
+        print("party off: carriers follow by joining the map name, which lands them in their own room")
+    else:
+        print("forming the party on the carried account")
+        party_members = party_form(online[args.carried], carriers, tok, log)
+        line = f"party members: {', '.join(party_members) if party_members else 'none joined'}"
+        print(line)
+        log.write(line + "\n")
+        for who in party_members:
+            log.write(f"  summon {who}: " + party_send(online[args.carried], "/party/summon", tok, {"name": who}) + "\n")
+
+    gate_file = os.path.join(os.path.dirname(os.path.abspath(args.log)) or ".", "solo_gated.json")
+    gated = load_gated(gate_file)
     deadline = time.time() + args.max_minutes * 60
     last_map = ""
     moves = 0
     while time.time() < deadline:
         time.sleep(args.follow_seconds)
         map_name, hp = where(online[args.carried], tok)
+        carried_map, carried_room, carried_players = room(online[args.carried], tok)
         story_live, story_script = running(online[args.carried], tok)
 
         for who in carriers:
-            carrier_map, _ = where(online[who], tok)
-            if carrier_map != map_name and map_name != "?":
-                code, res = call(online[who], "/join", tok, {"map": map_name})
-                moves += 1
-                detail = json.dumps(res.get("data") or res)[:90]
-                line = f"  move {who}: {carrier_map} -> {map_name} [{code}] {detail}"
+            carrier_map, carrier_room_now, _ = room(online[who], tok)
+            in_party = who in party_members
+            if carrier_room_now != carried_room and carried_room:
+                if gated.get(map_name, 0) > time.time():
+                    line = f"  skip {who}: {map_name} is solo gated (quiet period)"
+                elif in_party:
+                    # A summon moves the member into the leader's room, map and all. A map
+                    # join only picks a room by name and usually picks a different one.
+                    detail = party_send(online[args.carried], "/party/summon", tok, {"name": who})
+                    moves += 1
+                    time.sleep(6)
+                    after_map, after_room, after_players = room(online[who], tok)
+                    line = (f"  summon {who}: room {carrier_room_now} -> {after_room} {detail} "
+                            f"| players {after_players}")
+                    if after_room and after_room != carried_room:
+                        gated[map_name] = time.time() + args.gate_minutes * 60
+                        save_gated(gate_file, gated)
+                        line += (f"\n  SOLO GATED {map_name}: carried room {carried_room}, "
+                                 f"{who} stayed in {after_room}. No carry here for "
+                                 f"{args.gate_minutes} minutes: that boss needs a dodge or solo class.")
+                else:
+                    code, res = call(online[who], "/join", tok, {"map": map_name})
+                    moves += 1
+                    detail = json.dumps(res.get("data") or res)[:90]
+                    line = f"  join {who}: {carrier_map} -> {map_name} [{code}] {detail}"
+            else:
+                line = ""
+            if line:
                 print(line)
                 log.write(line + "\n")
+
             is_running, script = running(online[who], tok)
             if not is_running:
                 line = f"  restart zap on {who}: {ensure_script(online[who], args.zap, tok)}"
                 print(line)
                 log.write(line + "\n")
+                if in_party:
+                    log.write(f"  re-summon {who}: " + party_send(online[args.carried], "/party/summon", tok, {"name": who}) + "\n")
 
         line = (f"t+{int(time.time() - (deadline - args.max_minutes * 60))}s "
                 f"carried map={map_name} hp={hp}% story_running={story_live} moves={moves}")

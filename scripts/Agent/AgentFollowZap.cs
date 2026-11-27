@@ -1,10 +1,11 @@
 /*
 name: Agent Follow Zap
-description: Clears every monster on the map it is standing on and stays there until the campaign scheduler moves it or stops it. Stronger accounts run this while a weaker account works a story, so the rooms die faster and the weaker account gets the kill credit. Spends nothing, free to play safe.
-tags: agent, army, carry, zap, campaign
-version: 0.3
+description: Clears every monster on the room it stands in, joins the party it is invited to and accepts every summon, and stays until the campaign scheduler moves it or stops it. Stronger accounts run this while a weaker account works a story: the party summon puts them in the weak account's own room, which joining a map name never does. Spends nothing, free to play safe.
+tags: agent, army, carry, zap, party, campaign
+version: 0.4
 */
 //cs_include Scripts/CoreBots.cs
+//cs_include Scripts/Army/CoreArmyLite.cs
 using Skua.Core.Interfaces;
 using Skua.Core.Models.Monsters;
 
@@ -12,6 +13,10 @@ public class AgentFollowZap
 {
     public IScriptInterface Bot => IScriptInterface.Instance;
     public CoreBots Core => CoreBots.Instance;
+
+    // The library already knows how to answer a party invite and a party summon.
+    // Reusing it is one line here and one less thing that can be wrong on a live account.
+    public CoreArmyLite Army => CoreArmyLite.sArmy;
 
     // The scheduler stops this script when the carried account no longer needs help.
     // Two hours is the safety net for a scheduler that died.
@@ -26,12 +31,24 @@ public class AgentFollowZap
 
         Core.Logger($"ZAP|start|{RunMinutes} minute cap");
 
+        // A client only receives party invites with the party channel on.
+        try
+        {
+            Bot.Send.Packet("%xt%zm%cmd%1%partyon%");
+            Bot.Events.ExtensionPacketReceived += OnPacket;
+            Core.Logger("ZAP|party-listener|on");
+        }
+        catch (Exception e)
+        {
+            Core.Logger($"ZAP|party-listener|failed|{e.GetType().Name}");
+        }
+
         while (DateTime.Now < stop)
         {
             string map = MapName();
             if (map != lastMap)
             {
-                Core.Logger($"ZAP|map|{map}|players {Players()}");
+                Core.Logger($"ZAP|map|{map}|room {RoomId()}|players {Players()}|party {PartyLeader()}");
                 lastMap = map;
                 lastReport = DateTime.Now;
             }
@@ -61,12 +78,60 @@ public class AgentFollowZap
 
             if (DateTime.Now - lastReport > TimeSpan.FromMinutes(2))
             {
-                Core.Logger($"ZAP|{map}|attacks {attacks}|players {Players()}");
+                Core.Logger($"ZAP|{map}|room {RoomId()}|attacks {attacks}|players {Players()}|party {PartyLeader()}");
                 lastReport = DateTime.Now;
             }
         }
 
+        try
+        {
+            Bot.Events.ExtensionPacketReceived -= OnPacket;
+        }
+        catch
+        {
+        }
+
         Core.Logger($"ZAP|stop|attacks {attacks}");
+    }
+
+    /// <summary>
+    /// A party packet that throws must not take the story down with it, so the
+    /// library handler runs inside a shell that keeps the room working.
+    /// </summary>
+    private void OnPacket(dynamic packet)
+    {
+        try
+        {
+            Army.PartyManagement(packet);
+        }
+        catch
+        {
+        }
+    }
+
+    private string PartyLeader()
+    {
+        try
+        {
+            string leader = Bot.Flash.GetGameObject<string>("world.partyOwner");
+            return string.IsNullOrEmpty(leader) ? "none" : leader;
+        }
+        catch
+        {
+            return "?";
+        }
+    }
+
+    private int RoomId()
+    {
+        try
+        {
+            return Bot.Map.RoomID;
+        }
+        catch
+        {
+            return 0;
+        }
     }
 
     private List<Monster> LivingMonsters()

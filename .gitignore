@@ -4,3 +4,5 @@ ledgers/
 snapshots/
 carry.out
 carry.log
+pair*.out
+pair*.log
