@@ -1,0 +1,41 @@
+
+=== carry start: not_a_dumpling carried by not_a_grill | story Other/Classes/MartialArtist.cs ===
+  party on: [200] {"sent": "%xt%zm%cmd%1%partyon%", "name": null, "acceptedPartyId": ""}
+  invite not_a_grill: [200] {"sent": "%xt%zm%gp%1%pi%not_a_grill%", "name": "not_a_grill", "acceptedPartyId": ""}
+party members: none joined
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 4185, "mana": 100, "max
+t+28s carried map=etherwardes hp=58% story_running=True moves=1
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4580, "maxHealth": 4835, "mana": 100, "max
+t+56s carried map=etherwardes hp=44% story_running=True moves=2
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 3868, "maxHealth": 4835, "mana": 100, "max
+t+84s carried map=etherwardes hp=88% story_running=True moves=3
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 3348, "maxHealth": 4185, "mana": 100, "max
+t+112s carried map=etherwardes hp=88% story_running=True moves=4
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4582, "maxHealth": 4835, "mana": 100, "max
+t+140s carried map=etherwardes hp=90% story_running=True moves=5
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 4185, "mana": 100, "max
+t+167s carried map=etherwardes hp=82% story_running=True moves=6
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4515, "maxHealth": 4835, "mana": 67, "maxM
+t+195s carried map=etherwardes hp=75% story_running=True moves=7
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 3741, "maxHealth": 4835, "mana": 100, "max
+t+223s carried map=etherwardes hp=63% story_running=True moves=8
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 4185, "mana": 86, "maxM
+t+251s carried map=etherwardes hp=62% story_running=True moves=9
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4210, "maxHealth": 4835, "mana": 100, "max
+t+279s carried map=etherwardes hp=60% story_running=True moves=10
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4835, "maxHealth": 4835, "mana": 100, "max
+t+307s carried map=etherwardes hp=39% story_running=True moves=11
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 3348, "maxHealth": 4185, "mana": 100, "max
+t+335s carried map=etherwardes hp=36% story_running=True moves=12
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4835, "maxHealth": 4835, "mana": 100, "max
+t+363s carried map=etherwardes hp=31% story_running=True moves=13
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4062, "maxHealth": 4185, "mana": 100, "max
+t+391s carried map=etherwardes hp=14% story_running=True moves=14
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 3868, "maxHealth": 4835, "mana": 100, "max
+t+419s carried map=etherwardes hp=18% story_running=True moves=15
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 4185, "mana": 100, "max
+t+447s carried map=etherwardes hp=0% story_running=True moves=16
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 4185, "mana": 100, "max
+t+475s carried map=etherwardes hp=97% story_running=True moves=17
+  join not_a_grill: dreadfight -> etherwardes [200] {"name": "not_a_grill", "level": 100, "health": 4835, "maxHealth": 4835, "mana": 86, "maxM
+t+503s carried map=etherwardes hp=88% story_running=True moves=18

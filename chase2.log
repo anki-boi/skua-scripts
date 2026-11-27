@@ -1,0 +1,25 @@
+
+=== carry start: not_a_dumpling carried by not_a_grill | story Other/Classes/MartialArtist.cs ===
+  party on: [200] {"sent": "%xt%zm%cmd%1%partyon%", "name": null, "acceptedPartyId": ""}
+  invite not_a_grill: [200] {"sent": "%xt%zm%gp%1%pi%not_a_grill%", "name": "not_a_grill", "acceptedPartyId": ""}
+party members: none joined
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+50s carried map=dreadfight hp=60% story_running=True moves=3
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+100s carried map=dreadfight hp=66% story_running=True moves=6
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+151s carried map=dreadfight hp=42% story_running=True moves=9
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+201s carried map=dreadfight hp=0% story_running=True moves=12
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+252s carried map=dreadfight hp=70% story_running=True moves=15
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+303s carried map=dreadfight hp=25% story_running=True moves=18
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+353s carried map=dreadfight hp=0% story_running=True moves=21
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+404s carried map=dreadfight hp=35% story_running=True moves=24
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+454s carried map=dreadfight hp=60% story_running=True moves=27
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+505s carried map=dreadfight hp=91% story_running=True moves=30

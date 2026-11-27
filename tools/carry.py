@@ -110,6 +110,17 @@ def ensure_script(port: int, name: str, tok: str, force: bool = False) -> str:
     return f"started {name}"
 
 
+def room_pin(port: int, number: int, tok: str) -> str:
+    """Pin one account to one room number, or let it go back to public rooms.
+
+    A public room is chosen from the account's own quest state, so "same map name" never
+    means "same room". With the pin on, the client joins map-number and every account
+    that pins the same number stands together.
+    """
+    body = {"public": True} if number <= 0 else {"number": number}
+    return party_send(port, "/room", tok, body)
+
+
 def party(port: int, tok: str) -> dict:
     """Who stands in this account's party. An empty answer is no party, not an error."""
     code, res = call(port, "/party", tok)
@@ -143,6 +154,29 @@ def party_form(leader_port: int, names: list[str], tok: str, log) -> list[str]:
         if len(joined) == len(names):
             break
     return joined
+
+
+def close_room(port: int, tok: str, map_name: str, room_id: int, tries: int = 3) -> tuple[int, str, int]:
+    """Rejoin a public map until this account lands in the room the carried account holds.
+
+    On a quest map the game chooses the room, so one join is one lottery ticket and the
+    answer is to buy several. The dashed name carries the real room number the carried
+    account stands in, which is the only number the server can honour; a plain join asks
+    for any room and often lands next door. Nothing here touches the carried account, so
+    it keeps fighting while the helpers chase. Returns the room reached, the last name
+    asked for, and how many joins it took.
+    """
+    asked = ""
+    moves = 0
+    for attempt in range(1, max(1, tries) + 1):
+        asked = f"{map_name}-{room_id}" if attempt == 1 else map_name
+        call(port, "/join", tok, {"map": asked})
+        moves += 1
+        time.sleep(12 if attempt == 1 else 9)
+        got = room(port, tok)
+        if got[1] and got[1] == room_id:
+            return got[1], asked, moves
+    return room(port, tok)[1], asked, moves
 
 
 def load_gated(path: str) -> dict[str, float]:
@@ -187,8 +221,17 @@ def main(argv: list[str]) -> int:
                     help="how long to leave a solo-gated map alone after finding one")
     ap.add_argument("--restart-story", action="store_true",
                     help="restart the story script even if it is already running")
+    ap.add_argument("--tries", type=int, default=3,
+                       help="joins per cycle to land in the carried account room")
+    ap.add_argument("--give-up", type=int, default=2,
+                       help="stalled chase cycles before the helper farms alone")
     ap.add_argument("--no-party", action="store_true",
                     help="follow by joining the map name instead of the party (each account lands in its own room)")
+    ap.add_argument("--lobby", default="battleon",
+                    help="the map a follower steps out to when the two share a map name but not a room")
+    ap.add_argument("--room", type=int, default=0,
+                    help="pin every account of the pair to this private room number (1000-999999); "
+                         "0 leaves the client's own choice, which splits the pair by quest state")
     ap.add_argument("--accounts", default="", help="who to list with --status")
     ap.add_argument("--log", default="carry.log")
     args = ap.parse_args()
@@ -233,11 +276,22 @@ def main(argv: list[str]) -> int:
 
     gate_file = os.path.join(os.path.dirname(os.path.abspath(args.log)) or ".", "solo_gated.json")
     gated = load_gated(gate_file)
+    stalls: dict[tuple[str, str], int] = {}
     deadline = time.time() + args.max_minutes * 60
     last_map = ""
     moves = 0
+    if args.room:
+        # Every library script calls SetOptions(), and that turns the pin off. Re-arm it
+        # once here and once per cycle, so the pin never depends on what a script did.
+        for who in [args.carried] + carriers:
+            line = f"pin {who} to room {args.room}: " + room_pin(online[who], args.room, tok)
+            print(line)
+            log.write(line + "\n")
     while time.time() < deadline:
         time.sleep(args.follow_seconds)
+        if args.room:
+            for who in [args.carried] + carriers:
+                room_pin(online[who], args.room, tok)
         map_name, hp = where(online[args.carried], tok)
         carried_map, carried_room, carried_players = room(online[args.carried], tok)
         story_live, story_script = running(online[args.carried], tok)
@@ -253,16 +307,17 @@ def main(argv: list[str]) -> int:
                     # in the party's room. A summon cannot cross a map: tested live, the
                     # member said "Accepted the summon" and stayed where it stood. So follow
                     # by map name, and only summon when the map already matches.
-                    if carrier_map != map_name:
-                        action = f"join {map_name}"
-                        code, res = call(online[who], "/join", tok, {"map": map_name})
-                        detail = f"[{code}] {json.dumps(res.get('data') or res)[:70]}"
-                        moves += 1
-                    else:
-                        action = "summon"
-                        detail = party_send(online[args.carried], "/party/summon", tok, {"name": who})
-                        moves += 1
-                    time.sleep(8)
+                    # Public rooms, and the game picks which one. A single join is one
+                    # lottery ticket, so the helper buys several: first the dashed name with
+                    # the real room number the carried account stands in, then the plain
+                    # name, then it waits for the next cycle and tries again. The carried
+                    # account is never touched, so it keeps fighting while this happens.
+                    action = f"chase room {carried_room} on {map_name}"
+                    code, res = 200, {}
+                    after_room_try, asked, made = close_room(
+                        online[who], tok, map_name, carried_room, tries=args.tries)
+                    moves += made
+                    detail = f"asked {asked} in {made} joins"
                     after_map, after_room, after_players = room(online[who], tok)
                     line = (f"  {action} {who}: room {carrier_room_now} -> {after_room} {detail} "
                             f"| players {after_players}")
@@ -270,14 +325,31 @@ def main(argv: list[str]) -> int:
                         gated[map_name] = time.time() + args.gate_minutes * 60
                         save_gated(gate_file, gated)
                         line += (f"\n  SOLO GATED {map_name}: carried room {carried_room}, "
-                                 f"{who} stayed in {after_room}. No carry here for "
-                                 f"{args.gate_minutes} minutes: that boss room is an instance "
-                                 f"that will not take the party.")
+                                 f"{who} stayed in {after_room} after {args.tries} joins. "
+                                 f"No carry here for {args.gate_minutes} minutes: that room "
+                                 f"is an instance the game will not share.")
                 else:
-                    code, res = call(online[who], "/join", tok, {"map": map_name})
-                    moves += 1
-                    detail = json.dumps(res.get("data") or res)[:90]
-                    line = f"  join {who}: {carrier_map} -> {map_name} [{code}] {detail}"
+                    # No party, or the invite was never answered: the room chase works the
+                    # same without a party, and it must not depend on one. The game picks
+                    # the public room, so buy several tickets and keep trying next cycle.
+                    asked_room, asked, made = close_room(
+                        online[who], tok, map_name, carried_room, tries=args.tries)
+                    moves += made
+                    detail = f"asked {asked} in {made} joins"
+                    if asked_room == carrier_room_now:
+                        # The room did not budge. Count it, and after --give-up cycles stop
+                        # burning joins: the helper farms on its own until the next window.
+                        stalls[(who, map_name)] = stalls.get((who, map_name), 0) + 1
+                    else:
+                        stalls[(who, map_name)] = 0
+                    if stalls.get((who, map_name), 0) >= args.give_up:
+                        gated[map_name] = time.time() + args.gate_minutes * 60
+                        save_gated(gate_file, gated)
+                        stalls[(who, map_name)] = 0
+                        detail += (f" | GIVING UP after {args.give_up} cycles: {who} farms "
+                                   f"{map_name} alone for {args.gate_minutes} minutes")
+                    line = (f"  chase {who} without party: {carrier_map} room {carrier_room_now} "
+                            f"-> {asked_room} | wanted {carried_room} | {detail}")
             else:
                 line = ""
             if line:

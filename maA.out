@@ -1,0 +1,291 @@
+carried not_a_dumpling: started Other/Classes/MartialArtist.cs
+carrier not_a_grill: started Agent/AgentFollowZap.cs
+forming the party on the carried account
+party members: not_a_grill
+  re-enter via battleon not_a_grill: room 245795 -> 246491 [200->200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHe | players 2
+  SOLO GATED nexus: carried room 245752, not_a_grill stayed in 246491. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+42s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+62s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+82s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+102s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+122s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+142s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+162s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+182s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+202s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+222s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+243s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+263s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+283s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+303s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+323s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+343s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+363s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+383s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+403s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+424s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+444s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+464s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+484s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+504s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+524s carried map=nexus hp=100% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+544s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+564s carried map=nexus hp=99% story_running=True moves=1
+  skip not_a_grill: nexus is solo gated (quiet period)
+t+584s carried map=nexus hp=99% story_running=True moves=1
+  join arcangrove not_a_grill: room 246491 -> 247951 [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 418 | players 1
+  SOLO GATED arcangrove: carried room 247946, not_a_grill stayed in 247951. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+630s carried map=arcangrove hp=100% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+650s carried map=arcangrove hp=100% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+670s carried map=arcangrove hp=90% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+690s carried map=arcangrove hp=100% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+710s carried map=arcangrove hp=98% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+730s carried map=arcangrove hp=95% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+750s carried map=arcangrove hp=100% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+770s carried map=arcangrove hp=94% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+791s carried map=arcangrove hp=97% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+811s carried map=arcangrove hp=98% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+831s carried map=arcangrove hp=95% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+851s carried map=arcangrove hp=94% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+871s carried map=arcangrove hp=97% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+891s carried map=arcangrove hp=90% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+911s carried map=arcangrove hp=89% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+931s carried map=arcangrove hp=82% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+951s carried map=arcangrove hp=84% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+971s carried map=arcangrove hp=91% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+992s carried map=arcangrove hp=98% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1012s carried map=arcangrove hp=98% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+  restart zap on not_a_grill: started Agent/AgentFollowZap.cs
+t+1032s carried map=arcangrove hp=95% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1052s carried map=arcangrove hp=96% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1072s carried map=arcangrove hp=95% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1092s carried map=arcangrove hp=82% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1112s carried map=arcangrove hp=97% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1132s carried map=arcangrove hp=87% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1153s carried map=arcangrove hp=92% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1173s carried map=arcangrove hp=94% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1193s carried map=arcangrove hp=97% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1213s carried map=arcangrove hp=97% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1233s carried map=arcangrove hp=95% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1253s carried map=arcangrove hp=94% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1273s carried map=arcangrove hp=84% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1293s carried map=arcangrove hp=90% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1313s carried map=arcangrove hp=93% story_running=True moves=2
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1333s carried map=arcangrove hp=96% story_running=True moves=2
+  re-enter via battleon not_a_grill: room 247951 -> 249804 [200->200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHe | players 1
+  SOLO GATED arcangrove: carried room 247946, not_a_grill stayed in 249804. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+1376s carried map=arcangrove hp=95% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1396s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1417s carried map=arcangrove hp=95% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1437s carried map=arcangrove hp=94% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1457s carried map=arcangrove hp=96% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1477s carried map=arcangrove hp=94% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1497s carried map=arcangrove hp=91% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1517s carried map=arcangrove hp=95% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1537s carried map=arcangrove hp=93% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1557s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1577s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1597s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1617s carried map=arcangrove hp=94% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1638s carried map=arcangrove hp=91% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1658s carried map=arcangrove hp=88% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1678s carried map=arcangrove hp=92% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1698s carried map=arcangrove hp=93% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1718s carried map=arcangrove hp=86% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1738s carried map=arcangrove hp=88% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1758s carried map=arcangrove hp=100% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1778s carried map=arcangrove hp=90% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1798s carried map=arcangrove hp=93% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1819s carried map=arcangrove hp=97% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1839s carried map=arcangrove hp=97% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1859s carried map=arcangrove hp=97% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1879s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1899s carried map=arcangrove hp=90% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1919s carried map=arcangrove hp=91% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1939s carried map=arcangrove hp=94% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1959s carried map=arcangrove hp=86% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1979s carried map=arcangrove hp=92% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+1999s carried map=arcangrove hp=88% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2020s carried map=arcangrove hp=93% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2040s carried map=arcangrove hp=98% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2060s carried map=arcangrove hp=84% story_running=True moves=3
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2080s carried map=arcangrove hp=96% story_running=True moves=3
+  re-enter via battleon not_a_grill: room 249804 -> 249804 [200->200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHe | players 2
+  SOLO GATED arcangrove: carried room 247946, not_a_grill stayed in 249804. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+2122s carried map=arcangrove hp=97% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2142s carried map=arcangrove hp=94% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2162s carried map=arcangrove hp=91% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2182s carried map=arcangrove hp=91% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2203s carried map=arcangrove hp=90% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2223s carried map=arcangrove hp=90% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2243s carried map=arcangrove hp=94% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2263s carried map=arcangrove hp=94% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2283s carried map=arcangrove hp=91% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2303s carried map=arcangrove hp=100% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2323s carried map=arcangrove hp=100% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2343s carried map=arcangrove hp=100% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2363s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2384s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2404s carried map=arcangrove hp=91% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2424s carried map=arcangrove hp=92% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2444s carried map=arcangrove hp=97% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2464s carried map=arcangrove hp=95% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2484s carried map=arcangrove hp=86% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2504s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2524s carried map=arcangrove hp=95% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2544s carried map=arcangrove hp=93% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2564s carried map=arcangrove hp=94% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2585s carried map=arcangrove hp=97% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2605s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2625s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2645s carried map=arcangrove hp=98% story_running=True moves=4
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2671s carried map=arcangrove hp=92% story_running=True moves=4
+  join nexus not_a_grill: room 2 -> 252186 [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 418 | players 1
+t+2720s carried map=nexus hp=94% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2740s carried map=arcangrove hp=94% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2760s carried map=arcangrove hp=98% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2780s carried map=arcangrove hp=100% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2800s carried map=arcangrove hp=98% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2820s carried map=arcangrove hp=97% story_running=True moves=5
+  skip not_a_grill: arcangrove is solo gated (quiet period)
+t+2840s carried map=arcangrove hp=98% story_running=True moves=5
+  join arcangrove not_a_grill: room 252186 -> 249804 [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 418 | players 3
+  SOLO GATED arcangrove: carried room 252190, not_a_grill stayed in 249804. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+2885s carried map=arcangrove hp=100% story_running=True moves=6
+  join etherwardes not_a_grill: room 249804 -> 249862 [200] {"name": "not_a_grill", "level": 100, "health": 4185, "maxHealth": 418 | players 1
+  SOLO GATED etherwardes: carried room 252538, not_a_grill stayed in 249862. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+2931s carried map=etherwardes hp=88% story_running=True moves=7
+  skip not_a_grill: etherwardes is solo gated (quiet period)
+t+2951s carried map=etherwardes hp=72% story_running=True moves=7
+  skip not_a_grill: etherwardes is solo gated (quiet period)
+t+2971s carried map=etherwardes hp=77% story_running=True moves=7
+  skip not_a_grill: etherwardes is solo gated (quiet period)
+t+2991s carried map=etherwardes hp=74% story_running=True moves=7

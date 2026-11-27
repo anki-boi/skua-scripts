@@ -1,0 +1,29 @@
+
+=== carry start: not_a_dumpling carried by not_a_grill | story Other/Classes/MartialArtist.cs ===
+  party on: [200] {"sent": "%xt%zm%cmd%1%partyon%", "name": null, "acceptedPartyId": ""}
+  invite not_a_grill: [200] {"sent": "%xt%zm%gp%1%pi%not_a_grill%", "name": "not_a_grill", "acceptedPartyId": ""}
+party members: none joined
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins
+t+45s carried map=dreadfight hp=42% story_running=True moves=3
+  chase not_a_grill without party: dreadfight room 234535 -> 234535 | wanted 239810 | asked dreadfight in 3 joins | GIVING UP after 2 cycles: not_a_grill farms dreadfight alone for 12 minutes
+t+91s carried map=dreadfight hp=27% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+106s carried map=dreadfight hp=0% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+121s carried map=dreadfight hp=63% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+136s carried map=dreadfight hp=0% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+151s carried map=dreadfight hp=84% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+166s carried map=dreadfight hp=8% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+181s carried map=dreadfight hp=100% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+197s carried map=dreadfight hp=76% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+212s carried map=dreadfight hp=100% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+227s carried map=dreadfight hp=73% story_running=True moves=6
+  skip not_a_grill: dreadfight is solo gated (quiet period)
+t+242s carried map=dreadfight hp=9% story_running=True moves=6

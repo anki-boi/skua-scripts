@@ -1,0 +1,297 @@
+
+=== carry start: not_a_guy carried by jmd123 | story Other/Classes/MartialArtist.cs ===
+  party on: [200] {"sent": "%xt%zm%cmd%1%partyon%", "name": null, "acceptedPartyId": ""}
+  invite jmd123: [200] {"sent": "%xt%zm%gp%1%pi%jmd123%", "name": "jmd123", "acceptedPartyId": ""}
+party members: jmd123
+  summon jmd123: [200] {"sent": "%xt%zm%gp%1%ps%jmd123%", "name": "jmd123", "acceptedPartyId": ""}
+  join nexus jmd123: room 244486 -> 246491 [200] {"name": "jmd123", "level": 96, "health": 2991, "maxHealth": 2991, "ma | players 2
+  SOLO GATED nexus: carried room 246449, jmd123 stayed in 246491. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+45s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+65s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+85s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+105s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+125s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+145s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+165s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+185s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+205s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+225s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+246s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+266s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+286s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+306s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+326s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+346s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+366s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+386s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+407s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+427s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+447s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+467s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+487s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+507s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+527s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+547s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+567s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+587s carried map=nexus hp=100% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+608s carried map=nexus hp=98% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+628s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+648s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+668s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+688s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+708s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+728s carried map=nexus hp=99% story_running=True moves=1
+  skip jmd123: nexus is solo gated (quiet period)
+t+748s carried map=nexus hp=100% story_running=True moves=1
+  re-enter via battleon jmd123: room 246491 -> 246491 [200->200] {"name": "jmd123", "level": 96, "health": 2991, "maxHealth": | players 2
+  SOLO GATED nexus: carried room 246449, jmd123 stayed in 246491. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+791s carried map=nexus hp=99% story_running=True moves=2
+  skip jmd123: nexus is solo gated (quiet period)
+t+811s carried map=nexus hp=99% story_running=True moves=2
+  skip jmd123: nexus is solo gated (quiet period)
+t+831s carried map=nexus hp=99% story_running=True moves=2
+  skip jmd123: nexus is solo gated (quiet period)
+t+851s carried map=nexus hp=99% story_running=True moves=2
+  join arcangrove jmd123: room 246491 -> 246491 [200] {"name": "jmd123", "level": 96, "health": 2976, "maxHealth": 2991, "ma | players 1
+  SOLO GATED arcangrove: carried room 248601, jmd123 stayed in 246491. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+901s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+921s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+941s carried map=arcangrove hp=86% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+961s carried map=arcangrove hp=92% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+981s carried map=arcangrove hp=97% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1001s carried map=arcangrove hp=91% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1022s carried map=arcangrove hp=91% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1042s carried map=arcangrove hp=94% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1062s carried map=arcangrove hp=91% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1082s carried map=arcangrove hp=99% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1102s carried map=arcangrove hp=90% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1122s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1142s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1162s carried map=arcangrove hp=97% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1182s carried map=arcangrove hp=85% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1202s carried map=arcangrove hp=90% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1223s carried map=arcangrove hp=100% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1243s carried map=arcangrove hp=85% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1263s carried map=arcangrove hp=92% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1283s carried map=arcangrove hp=94% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1303s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1323s carried map=arcangrove hp=86% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1343s carried map=arcangrove hp=89% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1363s carried map=arcangrove hp=94% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1383s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1404s carried map=arcangrove hp=100% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1424s carried map=arcangrove hp=95% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1444s carried map=arcangrove hp=100% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1464s carried map=arcangrove hp=94% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1484s carried map=arcangrove hp=95% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1504s carried map=arcangrove hp=98% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1524s carried map=arcangrove hp=94% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1544s carried map=arcangrove hp=90% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1564s carried map=arcangrove hp=95% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1585s carried map=arcangrove hp=97% story_running=True moves=3
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1605s carried map=arcangrove hp=97% story_running=True moves=3
+  join arcangrove jmd123: room 246491 -> 249804 [200] {"name": "jmd123", "level": 96, "health": 2991, "maxHealth": 2991, "ma | players 2
+  SOLO GATED arcangrove: carried room 248601, jmd123 stayed in 249804. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+1654s carried map=arcangrove hp=97% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1674s carried map=arcangrove hp=92% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1694s carried map=arcangrove hp=97% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1714s carried map=arcangrove hp=95% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1734s carried map=arcangrove hp=95% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1754s carried map=arcangrove hp=97% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1774s carried map=arcangrove hp=88% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1795s carried map=arcangrove hp=80% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1815s carried map=arcangrove hp=81% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1835s carried map=arcangrove hp=75% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1855s carried map=arcangrove hp=83% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1875s carried map=arcangrove hp=89% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1895s carried map=arcangrove hp=98% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1915s carried map=arcangrove hp=96% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1935s carried map=arcangrove hp=87% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1955s carried map=arcangrove hp=91% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1975s carried map=arcangrove hp=97% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+1996s carried map=arcangrove hp=98% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2016s carried map=arcangrove hp=88% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2036s carried map=arcangrove hp=92% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+  restart zap on jmd123: started Agent/AgentFollowZap.cs
+  re-summon jmd123: [200] {"sent": "%xt%zm%gp%1%ps%jmd123%", "name": "jmd123", "acceptedPartyId": ""}
+t+2056s carried map=arcangrove hp=91% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2076s carried map=arcangrove hp=85% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2096s carried map=arcangrove hp=94% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2116s carried map=arcangrove hp=82% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2136s carried map=arcangrove hp=89% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2156s carried map=arcangrove hp=96% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2176s carried map=arcangrove hp=88% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2197s carried map=arcangrove hp=91% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2217s carried map=arcangrove hp=96% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2237s carried map=arcangrove hp=94% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2257s carried map=arcangrove hp=96% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2277s carried map=arcangrove hp=96% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2297s carried map=arcangrove hp=98% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2317s carried map=arcangrove hp=97% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2337s carried map=arcangrove hp=94% story_running=True moves=4
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2357s carried map=arcangrove hp=96% story_running=True moves=4
+  re-enter via battleon jmd123: room 249804 -> 249804 [200->200] {"name": "jmd123", "level": 96, "health": 2991, "maxHealth": | players 2
+  SOLO GATED arcangrove: carried room 248601, jmd123 stayed in 249804. No carry here for 12 minutes: that boss room is an instance that will not take the party.
+t+2400s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2420s carried map=arcangrove hp=100% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2440s carried map=arcangrove hp=100% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2461s carried map=arcangrove hp=88% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2481s carried map=arcangrove hp=94% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2501s carried map=arcangrove hp=94% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2521s carried map=arcangrove hp=97% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2541s carried map=arcangrove hp=100% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2561s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2581s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2601s carried map=arcangrove hp=93% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2621s carried map=arcangrove hp=95% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2642s carried map=arcangrove hp=87% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2662s carried map=arcangrove hp=100% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2682s carried map=arcangrove hp=97% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2702s carried map=arcangrove hp=96% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2722s carried map=arcangrove hp=97% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2742s carried map=arcangrove hp=95% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2762s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2782s carried map=arcangrove hp=100% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2802s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2822s carried map=arcangrove hp=86% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2843s carried map=arcangrove hp=91% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2863s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2883s carried map=arcangrove hp=96% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2903s carried map=arcangrove hp=91% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2923s carried map=arcangrove hp=98% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2943s carried map=arcangrove hp=92% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2964s carried map=arcangrove hp=91% story_running=True moves=5
+  skip jmd123: arcangrove is solo gated (quiet period)
+t+2984s carried map=arcangrove hp=94% story_running=True moves=5
