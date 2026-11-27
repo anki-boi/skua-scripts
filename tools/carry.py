@@ -249,20 +249,30 @@ def main(argv: list[str]) -> int:
                 if gated.get(map_name, 0) > time.time():
                     line = f"  skip {who}: {map_name} is solo gated (quiet period)"
                 elif in_party:
-                    # A summon moves the member into the leader's room, map and all. A map
-                    # join only picks a room by name and usually picks a different one.
-                    detail = party_send(online[args.carried], "/party/summon", tok, {"name": who})
-                    moves += 1
-                    time.sleep(6)
+                    # Two accounts on one map name share the room, and a party member lands
+                    # in the party's room. A summon cannot cross a map: tested live, the
+                    # member said "Accepted the summon" and stayed where it stood. So follow
+                    # by map name, and only summon when the map already matches.
+                    if carrier_map != map_name:
+                        action = f"join {map_name}"
+                        code, res = call(online[who], "/join", tok, {"map": map_name})
+                        detail = f"[{code}] {json.dumps(res.get('data') or res)[:70]}"
+                        moves += 1
+                    else:
+                        action = "summon"
+                        detail = party_send(online[args.carried], "/party/summon", tok, {"name": who})
+                        moves += 1
+                    time.sleep(8)
                     after_map, after_room, after_players = room(online[who], tok)
-                    line = (f"  summon {who}: room {carrier_room_now} -> {after_room} {detail} "
+                    line = (f"  {action} {who}: room {carrier_room_now} -> {after_room} {detail} "
                             f"| players {after_players}")
                     if after_room and after_room != carried_room:
                         gated[map_name] = time.time() + args.gate_minutes * 60
                         save_gated(gate_file, gated)
                         line += (f"\n  SOLO GATED {map_name}: carried room {carried_room}, "
                                  f"{who} stayed in {after_room}. No carry here for "
-                                 f"{args.gate_minutes} minutes: that boss needs a dodge or solo class.")
+                                 f"{args.gate_minutes} minutes: that boss room is an instance "
+                                 f"that will not take the party.")
                 else:
                     code, res = call(online[who], "/join", tok, {"map": map_name})
                     moves += 1
