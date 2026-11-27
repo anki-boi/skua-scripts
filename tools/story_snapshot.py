@@ -99,6 +99,13 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--script", default="Agent/AgentStoryLedger.cs")
     ap.add_argument("--out", default="snapshots")
     ap.add_argument("--compare-only", action="store_true")
+    ap.add_argument("--via-check", action="store_true",
+                    help="use POST /quests/check on the agent build instead of running the probe script")
+    here = os.path.dirname(os.path.abspath(__file__))
+    default_landmarks = next((c for c in (os.path.join(here, os.pardir, "landmarks.json"),
+                                          os.path.join(here, "landmarks.json"))
+                              if os.path.exists(c)), os.path.join(here, "landmarks.json"))
+    ap.add_argument("--landmarks", default=default_landmarks)
     ap.add_argument("--max-minutes", type=int, default=12)
     ap.add_argument("--poll", type=int, default=30)
     args = ap.parse_args()
@@ -117,6 +124,33 @@ def main(argv: list[str]) -> int:
     if not picked:
         print("no online account to probe")
         return 1
+
+    if args.via_check:
+        rows_by_id = {}
+        try:
+            for row in json.load(open(os.path.expandvars(args.landmarks), encoding="utf-8")):
+                rows_by_id[int(row["questId"])] = str(row["story"])
+        except OSError:
+            print(f"missing landmark file: {os.path.abspath(args.landmarks)}")
+            print("run tools/landmarks.py first.")
+            return 1
+        ids = sorted(rows_by_id)
+        os.makedirs(args.out, exist_ok=True)
+        for who in picked:
+            states: dict[str, str] = {}
+            for start in range(0, len(ids), 300):
+                chunk = ids[start:start + 300]
+                code, res = call(online[who], "/quests/check", tok, {"ids": chunk}, timeout=900)
+                if code != 200:
+                    print(f"{who}: /quests/check {code} {json.dumps(res)[:140]}")
+                    continue
+                for row in (res.get("data") or {}).get("quests", []):
+                    state = ("done" if row.get("complete")
+                             else "not_loaded" if row.get("state") == "not_loaded" else "todo")
+                    states[rows_by_id.get(int(row.get("id", 0)), str(row.get("id")))] = state
+            json.dump(states, open(os.path.join(args.out, f"{who}.snapshot.json"), "w", encoding="utf-8"), indent=1)
+            print(f"{who}: {sum(1 for v in states.values() if v == 'done')} done of {len(states)} landmarks")
+        return compare(args.out, picked)
 
     running: dict[str, int] = {}
     for who in picked:
