@@ -1,0 +1,687 @@
+[
+ {
+  "story": "(Chaos Finale Bonus) Deadly Dungeon",
+  "questId": 3698,
+  "script": "Story/LordsofChaos/ChoasFinaleBonus[Mem]/DeadlyDungeon[Mem].cs"
+ },
+ {
+  "story": "(Chaos Finale Bonus) Killer Catacombs",
+  "questId": 3679,
+  "script": "Story/LordsofChaos/ChoasFinaleBonus[Mem]/KillerCatacombs[Mem].cs"
+ },
+ {
+  "story": "(Chaos Finale Bonus) Pyramid of Pain",
+  "questId": 3651,
+  "script": "Story/LordsofChaos/ChoasFinaleBonus[Mem]/PyramidofPain[Mem].cs"
+ },
+ {
+  "story": "(War) Seven Circles",
+  "questId": 7990,
+  "script": "Story/Legion/SevenCircles(War).cs"
+ },
+ {
+  "story": "Aranx Quests",
+  "questId": 6503,
+  "script": "Story/AranxQuests.cs"
+ },
+ {
+  "story": "Arcangrove Story",
+  "questId": 3373,
+  "script": "Story/Arcangrove.cs"
+ },
+ {
+  "story": "Aria's Greenhouse Story",
+  "questId": 10217,
+  "script": "Story/AriaGreenhouse.cs"
+ },
+ {
+  "story": "Artixpointe Story",
+  "questId": 3807,
+  "script": "Story/Artixpointe.cs"
+ },
+ {
+  "story": "Asylum Story",
+  "questId": 2466,
+  "script": "Story/Asylum.cs"
+ },
+ {
+  "story": "Atlas Falls Story",
+  "questId": 10128,
+  "script": "Story/Legion/AtlasFalls.cs"
+ },
+ {
+  "story": "Atlas Kingdom Story",
+  "questId": 10124,
+  "script": "Story/Legion/AtlasKingdom.cs"
+ },
+ {
+  "story": "Atlas Promenade Story",
+  "questId": 10111,
+  "script": "Story/Legion/AtlasPromenade.cs"
+ },
+ {
+  "story": "Bamboozle",
+  "questId": 7292,
+  "script": "Story/Nation/Bamboozle.cs"
+ },
+ {
+  "story": "Banished",
+  "questId": 9042,
+  "script": "Story/Banished.cs"
+ },
+ {
+  "story": "Base Camp Storyline",
+  "questId": 10273,
+  "script": "Story/BaseCamp.cs"
+ },
+ {
+  "story": "Battle Under Story",
+  "questId": 7289,
+  "script": "Story/BattleUnder.cs"
+ },
+ {
+  "story": "Beleen's Dream Story",
+  "questId": 3363,
+  "script": "Story/BeleensDream.cs"
+ },
+ {
+  "story": "Blood Moon",
+  "questId": 6067,
+  "script": "Story/BloodMoon.cs"
+ },
+ {
+  "story": "Bludrut Story",
+  "questId": 1689,
+  "script": "Story/Bludrut.cs"
+ },
+ {
+  "story": "Bone Break Story",
+  "questId": 5978,
+  "script": "Story/BoneBreak.cs"
+ },
+ {
+  "story": "Borgars Story",
+  "questId": 7520,
+  "script": "Story/Borgars.cs"
+ },
+ {
+  "story": "Bright Crystal Story",
+  "questId": 4967,
+  "script": "Story/BrightCrystalStory.cs"
+ },
+ {
+  "story": "Bright Oak (Extra)",
+  "questId": 4660,
+  "script": "Story/QueenofMonsters/Extra/BrightOak.cs"
+ },
+ {
+  "story": "Castle of Glass Story",
+  "questId": 5353,
+  "script": "Story/CastleOfGlass.cs"
+ },
+ {
+  "story": "Celestial Past (Extra)",
+  "questId": 7681,
+  "script": "Story/QueenofMonsters/Extra/CelestialPast.cs"
+ },
+ {
+  "story": "Chaoslab Story",
+  "questId": 3566,
+  "script": "Story/ChaosLab.cs"
+ },
+ {
+  "story": "Citadel Ruins",
+  "questId": 6180,
+  "script": "Story/Nation/CitadelRuins.cs"
+ },
+ {
+  "story": "Cleric Story",
+  "questId": 2293,
+  "script": "Story/Cleric.cs"
+ },
+ {
+  "story": "Concert Story (Member)",
+  "questId": 1033,
+  "script": "Story/Concert[MEM].cs"
+ },
+ {
+  "story": "Cornelis Story (Member)",
+  "questId": 1632,
+  "script": "Story/Cornelis[mem].cs"
+ },
+ {
+  "story": "Crux Ship Story",
+  "questId": 4616,
+  "script": "Story/CruxShip.cs"
+ },
+ {
+  "story": "Dage Challenge Story",
+  "questId": 8546,
+  "script": "Story/Legion/DageChallengeStory.cs"
+ },
+ {
+  "story": "Dage Recruit Story",
+  "questId": 8586,
+  "script": "Story/Legion/DageRecruit.cs"
+ },
+ {
+  "story": "Dark Carnax Story",
+  "questId": 8871,
+  "script": "Story/DarkCarnax.cs"
+ },
+ {
+  "story": "Dark War Legion and Nation",
+  "questId": 8576,
+  "script": "Story/Legion/DarkWarLegionandNation.cs"
+ },
+ {
+  "story": "DarkDungeon",
+  "questId": 3541,
+  "script": "Story/DarkDungeon.cs"
+ },
+ {
+  "story": "Darkon Garden",
+  "questId": 7492,
+  "script": "Story/ElegyofMadness(Darkon)/DarkonGarden.cs"
+ },
+ {
+  "story": "Death's Realm Story",
+  "questId": 2425,
+  "script": "Story/DeathsRealm.cs"
+ },
+ {
+  "story": "Deleuze Tundra Story",
+  "questId": 10030,
+  "script": "Story/Nation/DeleuzeTundra.cs"
+ },
+ {
+  "story": "Djinn Gate Story",
+  "questId": 6162,
+  "script": "Story/DjinnGate.cs"
+ },
+ {
+  "story": "Doom Vault (A) Story",
+  "questId": 3008,
+  "script": "Story/DoomVault.cs"
+ },
+ {
+  "story": "Doom Vault (B) Story",
+  "questId": 3004,
+  "script": "Story/DoomVaultB.cs"
+ },
+ {
+  "story": "Draco Con Story",
+  "questId": 5372,
+  "script": "Story/DracoCon.cs"
+ },
+ {
+  "story": "Dragon Fable Origins Story",
+  "questId": 6301,
+  "script": "Story/DragonFableOrigins.cs"
+ },
+ {
+  "story": "Dragon Road Story (Upholder)",
+  "questId": 4544,
+  "script": "Story/DragonRoad[Upholder].cs"
+ },
+ {
+  "story": "Dread Forest Story",
+  "questId": 8722,
+  "script": "Story/DreadForest.cs"
+ },
+ {
+  "story": "Dream Palace Story",
+  "questId": 7874,
+  "script": "Story/DreamPalace.cs"
+ },
+ {
+  "story": "Dwarves Vs Giants Story",
+  "questId": 2782,
+  "script": "Story/DwarvesVsGiants.cs"
+ },
+ {
+  "story": "Eden Story",
+  "questId": 8800,
+  "script": "Story/Eden.cs"
+ },
+ {
+  "story": "Etherstorm Wastes Story",
+  "questId": 3534,
+  "script": "Story/EtherstormWastes.cs"
+ },
+ {
+  "story": "Exaltia Tower Story",
+  "questId": 8150,
+  "script": "Story/ExaltiaTower.cs"
+ },
+ {
+  "story": "Extinction Story",
+  "questId": 3857,
+  "script": "Story/Extinction.cs"
+ },
+ {
+  "story": "Fiend Past",
+  "questId": 8493,
+  "script": "Story/Nation/FiendPast.cs"
+ },
+ {
+  "story": "Fiendshard",
+  "questId": 7898,
+  "script": "Story/Nation/Fiendshard.cs"
+ },
+ {
+  "story": "FiendVoid",
+  "questId": 10568,
+  "script": "Story/Nation/FiendVoid.cs"
+ },
+ {
+  "story": "Friendship Story",
+  "questId": 9104,
+  "script": "Story/Friendship.cs"
+ },
+ {
+  "story": "Frozen Northlands Story",
+  "questId": 3637,
+  "script": "Story/FrozenNorthlands.cs"
+ },
+ {
+  "story": "Glacera Story",
+  "questId": 7841,
+  "script": "Story/Glacera.cs"
+ },
+ {
+  "story": "Hatch The Egg (Extra)",
+  "questId": 6913,
+  "script": "Story/7DeadlyDragons/Extra/HatchTheEgg.cs"
+ },
+ {
+  "story": "Hunter's Moon Story",
+  "questId": 6707,
+  "script": "Story/HuntersMoon.cs"
+ },
+ {
+  "story": "Ice Plane Story",
+  "questId": 5780,
+  "script": "Story/IcePlane.cs"
+ },
+ {
+  "story": "Infernal Arena",
+  "questId": 9377,
+  "script": "Story/QueenofMonsters/Extra/InfernalArena.cs"
+ },
+ {
+  "story": "Infernal Dianoia",
+  "questId": 10091,
+  "script": "Story/QueenofMonsters/Extra/InfernalDianoia.cs"
+ },
+ {
+  "story": "Infernal Paradise",
+  "questId": 10078,
+  "script": "Story/QueenofMonsters/Extra/InfernalParadise.cs"
+ },
+ {
+  "story": "J6 Saga Story",
+  "questId": 2844,
+  "script": "Story/J6Saga.cs"
+ },
+ {
+  "story": "Lae Wedding Story",
+  "questId": 9950,
+  "script": "Story/LaeWedding.cs"
+ },
+ {
+  "story": "Lightguard Story",
+  "questId": 2033,
+  "script": "Story/Lightguard[MEM].cs"
+ },
+ {
+  "story": "Lightovia Cave Story",
+  "questId": 7133,
+  "script": "Story/LightoviaCave.cs"
+ },
+ {
+  "story": "Living Dungeon (Extra)",
+  "questId": 4384,
+  "script": "Story/QueenofMonsters/Extra/LivingDungeon.cs"
+ },
+ {
+  "story": "Lost Villa",
+  "questId": 9567,
+  "script": "Story/LostVilla.cs"
+ },
+ {
+  "story": "Magic Thief Story",
+  "questId": 1915,
+  "script": "Story/MagicThief.cs"
+ },
+ {
+  "story": "Manor Story",
+  "questId": 1060,
+  "script": "Story/Manor.cs"
+ },
+ {
+  "story": "Marsh 2 Story (Member)",
+  "questId": 1478,
+  "script": "Story/Marsh2[MEM].cs"
+ },
+ {
+  "story": "Musty Cave Story",
+  "questId": 7049,
+  "script": "Story/MustyCave.cs"
+ },
+ {
+  "story": "Noobshire Story",
+  "questId": 2190,
+  "script": "Story/Noobshire.cs"
+ },
+ {
+  "story": "null",
+  "questId": 5944,
+  "script": "Story/7DeadlyDragons/Core7DD.cs"
+ },
+ {
+  "story": "null",
+  "questId": 10736,
+  "script": "Story/AgeOfRuin/CoreAOR.cs"
+ },
+ {
+  "story": "null",
+  "questId": 2126,
+  "script": "Story/Doomwood/CoreDoomwood.cs"
+ },
+ {
+  "story": "null",
+  "questId": 9801,
+  "script": "Story/DragonsOfYokai/CoreDOY.cs"
+ },
+ {
+  "story": "null",
+  "questId": 8733,
+  "script": "Story/ElegyofMadness(Darkon)/CoreAstravia.cs"
+ },
+ {
+  "story": "null",
+  "questId": 4154,
+  "script": "Story/Fireisland/CoreFireisland.cs"
+ },
+ {
+  "story": "null",
+  "questId": 3182,
+  "script": "Story/Hollowborn/CoreHollowbornStory.cs"
+ },
+ {
+  "story": "null",
+  "questId": 4254,
+  "script": "Story/IsleOfFotia/CoreIsleOfFotia.cs"
+ },
+ {
+  "story": "null",
+  "questId": 5657,
+  "script": "Story/Legion/DageTheEvilIsland/CoreDageTheEvilIsland.cs"
+ },
+ {
+  "story": "null",
+  "questId": 3675,
+  "script": "Story/LordsofChaos/Core13LoC.cs"
+ },
+ {
+  "story": "null",
+  "questId": 10264,
+  "script": "Story/Lynaria/CoreLynaria.cs"
+ },
+ {
+  "story": "null",
+  "questId": 7533,
+  "script": "Story/MemetsRealm/CoreMemet.cs"
+ },
+ {
+  "story": "null",
+  "questId": 10771,
+  "script": "Story/Oasis/CoreOasis.cs"
+ },
+ {
+  "story": "null",
+  "questId": 8107,
+  "script": "Story/QueenofMonsters/CoreQOM.cs"
+ },
+ {
+  "story": "null",
+  "questId": 6591,
+  "script": "Story/SepulchureSaga/CoreSepulchure.cs"
+ },
+ {
+  "story": "null",
+  "questId": 7765,
+  "script": "Story/ShadowsOfChaos/CoreSoC.cs"
+ },
+ {
+  "story": "null",
+  "questId": 9123,
+  "script": "Story/ShadowsOfWar/CoreSoW.cs"
+ },
+ {
+  "story": "null",
+  "questId": 4399,
+  "script": "Story/Summer2015AdventureMap/CoreSummer.cs"
+ },
+ {
+  "story": "null",
+  "questId": 10842,
+  "script": "Story/SunSetSaga/CoreSunSet.cs"
+ },
+ {
+  "story": "null",
+  "questId": 5434,
+  "script": "Story/ThroneofDarkness/CoreToD.cs"
+ },
+ {
+  "story": "Nythera Saga Story",
+  "questId": 903,
+  "script": "Story/NytheraSaga.cs"
+ },
+ {
+  "story": "Oblivion Tundra Story",
+  "questId": 10044,
+  "script": "Story/Nation/OblivionTundra.cs"
+ },
+ {
+  "story": "Orb Hunt (Extra)",
+  "questId": 8349,
+  "script": "Story/QueenofMonsters/Extra/OrbHunt.cs"
+ },
+ {
+  "story": "Originul",
+  "questId": 7889,
+  "script": "Story/Nation/Originul.cs"
+ },
+ {
+  "story": "Pirates Story (Member)",
+  "questId": 1541,
+  "script": "Story/Pirates[Member].cs"
+ },
+ {
+  "story": "Poison Forest Story",
+  "questId": 8011,
+  "script": "Story/Adam1a1Quests.cs"
+ },
+ {
+  "story": "Poison Forest Story",
+  "questId": 1955,
+  "script": "Story/PoisonForest.cs"
+ },
+ {
+  "story": "Queen Battle (Extra)",
+  "questId": 8361,
+  "script": "Story/QueenofMonsters/Extra/QueenBattle.cs"
+ },
+ {
+  "story": "Queen Reign Story",
+  "questId": 8318,
+  "script": "Story/QueenReign.cs"
+ },
+ {
+  "story": "Quibble Hunt Story",
+  "questId": 5887,
+  "script": "Story/QuibbleHunt.cs"
+ },
+ {
+  "story": "Ravenloss Saga Story",
+  "questId": 3438,
+  "script": "Story/RavenlossSaga.cs"
+ },
+ {
+  "story": "Ravenscar Story",
+  "questId": 2902,
+  "script": "Story/Legion/Ravenscar.cs"
+ },
+ {
+  "story": "Safiria Story (Member)",
+  "questId": 1946,
+  "script": "Story/Safiria[Member].cs"
+ },
+ {
+  "story": "Seraphic War",
+  "questId": 6243,
+  "script": "Story/Legion/SeraphicWar.cs"
+ },
+ {
+  "story": "Shadow Slayer",
+  "questId": 9842,
+  "script": "Story/ShadowSlayerK.cs"
+ },
+ {
+  "story": "Shadow Vault Story",
+  "questId": 6794,
+  "script": "Story/ShadowVault.cs"
+ },
+ {
+  "story": "Shadow Void Story",
+  "questId": 7130,
+  "script": "Story/ShadowVoid.cs"
+ },
+ {
+  "story": "Shatter Sword Story",
+  "questId": 2690,
+  "script": "Story/Shattersword.cs"
+ },
+ {
+  "story": "Shinkansen Story",
+  "questId": 8123,
+  "script": "Story/Shinkansen.cs"
+ },
+ {
+  "story": "SkyGuard Saga Story",
+  "questId": 2489,
+  "script": "Story/SkyGuardSaga.cs"
+ },
+ {
+  "story": "Spire Past Story",
+  "questId": 6831,
+  "script": "Story/SpirePast.cs"
+ },
+ {
+  "story": "Super Death Story",
+  "questId": 8031,
+  "script": "Story/SuperDeath.cs"
+ },
+ {
+  "story": "Terces Invasion",
+  "questId": 10580,
+  "script": "Story/Nation/TercesInvasion.cs"
+ },
+ {
+  "story": "tercesarchive",
+  "questId": 10555,
+  "script": "Story/Nation/tercesarchive.cs"
+ },
+ {
+  "story": "Tercessuinotlim",
+  "questId": 8474,
+  "script": "Story/Nation/Tercessuinotlim.cs"
+ },
+ {
+  "story": "Third Spell Story",
+  "questId": 4491,
+  "script": "Story/ThirdSpell.cs"
+ },
+ {
+  "story": "Thunderfang Story",
+  "questId": 4242,
+  "script": "Story/ThunderFang.cs"
+ },
+ {
+  "story": "Titan Attack Story",
+  "questId": 8776,
+  "script": "Story/TitanAttack.cs"
+ },
+ {
+  "story": "Tournament Story",
+  "questId": 2711,
+  "script": "Story/Tournament.cs"
+ },
+ {
+  "story": "Tower of Doom Story",
+  "questId": 3474,
+  "script": "Story/TowerOfDoom.cs"
+ },
+ {
+  "story": "Tower Story (Member)",
+  "questId": 1610,
+  "script": "Story/Tower[mem].cs"
+ },
+ {
+  "story": "Ubear Story",
+  "questId": 7439,
+  "script": "Story/Ubear.cs"
+ },
+ {
+  "story": "UnderGround Lab Story",
+  "questId": 3155,
+  "script": "Story/UnderGroundLab.cs"
+ },
+ {
+  "story": "Vasalkar Lair War Story",
+  "questId": 6688,
+  "script": "Story/VasalkarLairWar.cs"
+ },
+ {
+  "story": "Victor Matsuri",
+  "questId": 10295,
+  "script": "Story/VictorMatsuri.cs"
+ },
+ {
+  "story": "Void Chasm Story",
+  "questId": 9551,
+  "script": "Story/Nation/VoidChasm.cs"
+ },
+ {
+  "story": "Void Refuge Story",
+  "questId": 9530,
+  "script": "Story/Nation/VoidRefuge.cs"
+ },
+ {
+  "story": "WarMonger",
+  "questId": 10176,
+  "script": "Story/TrainersStory.cs"
+ },
+ {
+  "story": "WatchTower Story",
+  "questId": 2609,
+  "script": "Story/WatchTower.cs"
+ },
+ {
+  "story": "World Soul",
+  "questId": 6244,
+  "script": "Story/Legion/WorldSoul.cs"
+ },
+ {
+  "story": "Xan's Lair Story",
+  "questId": 2155,
+  "script": "Story/XansLair.cs"
+ },
+ {
+  "story": "Yokai Story",
+  "questId": 6490,
+  "script": "Story/Yokai.cs"
+ }
+]
