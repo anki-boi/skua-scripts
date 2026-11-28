@@ -1,0 +1,124 @@
+#!/usr/bin/env python3
+"""Pick the next class per account from docs/PROGRESSION-BIBLE.md.
+
+Reads each account's inventory, drops the classes it already owns, and names the first unbuilt step
+of the bible order, with the script to run and the gate to grind. Cost is not vibes: every gate below
+was read from the installed library source under %APPDATA%\\VibeSkua\\Scripts.
+
+  python tools/class_plan.py                # the next step per account
+  python tools/class_plan.py --all          # the whole ladder per account
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import urllib.request
+
+HOST = "http://127.0.0.1:8766"
+TOKEN = "L4vHafbLqU0SHln04DCmSacTYnm0"
+ACCOUNTS = ["jmd123", "not_a_guy", "not_a_dumpling", "not_a_grill"]
+
+# (class name, library script, gate to grind first, job, why it is worth it)
+LADDER = [
+    ("Imperial Chunin", "Other/Classes/REP-based/ImperialChunin.cs",
+     "Rank 10 Yokai (CoreFarms.cs:4304 hunts dragonkoiz, collectorlab, terrarium)", "FARM",
+     "community 1st best low level farmer, 0 quests, 0 kills, gold buy"),
+    ("Dragonslayer", "Other/Classes/Dragonslayer.cs",
+     "Galanoth's first 4 quests at /join lair", "SOLO",
+     "'ridiculously easy to get... can solo the entire Chaos Saga with ease'"),
+    ("Master Ranger", "Other/Classes/REP-based/MasterRanger.cs",
+     "Rank 10 Sandsea (CoreFarms.cs:3988 hunts sandsea, somnia)", "FARM",
+     "one chapter plus rep; 'master ranger would help you a lot'"),
+    ("Chaos Slayer", "Other/Classes/REP-based/ChaosSlayer.cs",
+     "Chaos Militia then Chaos rep (CoreFarms.cs:2399,2421 hunt mountdoomskull, thespan, wanders); needs 13 LoC", "SOLO+SUPPORT",
+     "'best F2P class against Champion Drakath'; 'chaos rep is the easiest to get'"),
+    ("Shaman", "Other/Classes/REP-based/Shaman.cs",
+     "Rank 10 Arcangrove (CoreFarms.cs:1996 hunts arcangrove, baconcatlair)", "FARM+SUPPORT",
+     "cheap self sustain; EvolvedShaman is the same gate again"),
+    ("StoneCrusher", "Other/Classes/REP-based/StoneCrusher.cs",
+     "Rank 10 Mythsong (CoreFarms.cs:3865) plus 13 LoC plus Bright Oak", "SUPPORT",
+     "'main supports: LOO, StoneCrusher, AP, LR'"),
+    ("Death Knight", "Other/Classes/REP-based/DeathKnight.cs",
+     "Rank 10 Doomwood (CoreFarms.cs:2603); script has a member branch", "FARM",
+     "feeds Dragon Knight later"),
+    ("Lord of Order", "Dailies/LordOfOrder.cs",
+     "level 50, Fishing rep, Dragon Fable Origins, Citadel Ruins (13 quests, 36 kills)", "SUPPORT",
+     "'needed in all ultras'"),
+    ("Archpaladin", "Good/ArchPaladin.cs",
+     "Good rep, SpellCrafting, BLoD, Paladin first (18 quests, 34 kills)", "SUPPORT",
+     "'one of the best classes you can get in the game'"),
+    ("Legion Revenant", "Legion/Revenant/0LegionRevenant.cs",
+     "CoreLegion, Infinite Legion Dark Caster first", "SUPPORT+SOLO",
+     "'usable in all ultras', 'a great farmer'"),
+    ("Yami no Ronin", "Legion/YamiNoRonin/0YamiNoRonin.cs",
+     "CoreLegion, SwordMaster first", "SOLO",
+     "'better than KE... 100% dodge'"),
+    ("King's Echo", "Other/Classes/KingsEcho.cs",
+     "level 80, Good plus Swordhaven rep, Shadows of War (5 quests, 12 kills)", "SOLO",
+     "'strongest F2P DPS atm', but 2026 caveat: not worth rushing before Yami no Ronin"),
+    ("Arcana Invoker", "Other/Classes/ArcanaInvoker[Non-Insignia].cs",
+     "level 80, CoreDarkon, 41 merge buys (badge optional)", "FARM",
+     "'best generic farming class in the game', 'best soloing class'"),
+]
+
+WALLS = {
+    "Sentinel": "needs a web badge (measured False on all four)",
+    "Lich": "needs level 100 plus Grimskull Trolling rank 10 plus 6,666 Bone Dust",
+    "Scarlet Sorceress": "needs Dragon of Time plus 302,500 drops (~250 h)",
+}
+
+
+def api(port: int, path: str = "/state"):
+    req = urllib.request.Request(HOST.replace("8766", str(port)) + path)
+    req.add_header("Authorization", "Bearer " + TOKEN)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        d = json.load(r).get("data") or {}
+    return d if isinstance(d, dict) else {}
+
+
+def owned(who: str, ports: dict) -> set:
+    """Class names in the bag, from the real inventory endpoint."""
+    try:
+        items = api(ports[who], "/inventory").get("items") or []
+    except Exception:
+        return set()
+    return {str(i.get("name")) for i in items if i.get("name")}
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--all", action="store_true", help="print the whole remaining ladder per account")
+    args = ap.parse_args()
+
+    workers = api(8766, "/client").get("workers") or []
+    ports = {}
+    for w in workers:
+        try:
+            st = api(w["port"])
+        except Exception:
+            continue
+        if st.get("playing"):
+            ports[st["name"]] = w["port"]
+
+    print("bible order, cost read from the library source (docs/PROGRESSION-BIBLE.md):\n")
+    for who in ACCOUNTS:
+        if who not in ports:
+            print("%-15s offline: no client, cannot read the bag" % who)
+            continue
+        have = owned(who, ports)
+        left = [s for s in LADDER if s[0] not in have]
+        lvl = api(ports[who]).get("level")
+        print("%-15s level %-4s owns %d of %d ladder classes" % (who, lvl, len(LADDER) - len(left), len(LADDER)))
+        for name, script, gate, job, why in (left if args.all else left[:2]):
+            print("    next: %-20s %-9s %s" % (name, job, script))
+            print("          gate: %s" % gate[:110])
+            print("          why : %s" % why[:110])
+        for wall, why in WALLS.items():
+            if wall not in have:
+                print("    wall: %-20s %s" % (wall, why))
+        print(flush=True)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
