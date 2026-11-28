@@ -67,6 +67,19 @@ LADDER = [
      "'best generic farming class in the game', 'best soloing class'"),
 ]
 
+# Which faction rank each gate needs, so the tool can read the real rank with GET /reps.
+GATE_FACTION = {
+    "Imperial Chunin": "Yokai",
+    "Master Ranger": "Sandsea",
+    "Chaos Slayer": "Chaos",
+    "Shaman": "Arcangrove",
+    "StoneCrusher": "Mythsong",
+    "Death Knight": "Doomwood",
+    "Lord of Order": "Fishing",
+    "Archpaladin": "Good",
+    "Verus DoomKnight": "Evil",
+}
+
 WALLS = {
     "Sentinel": "needs a web badge (measured False on all four)",
     "Lich": "needs level 100 plus Grimskull Trolling rank 10 plus 6,666 Bone Dust",
@@ -89,6 +102,36 @@ def bag(who: str, ports: dict) -> list:
     except Exception:
         return []
     return [str(i.get("name")) for i in items if i.get("name")]
+
+
+def class_rows(who: str, ports: dict) -> dict:
+    """Owned classes with their measured rank, from GET /classes. A class item's quantity holds its
+    class points, so the client computes rank instead of guessing it."""
+    try:
+        data = api(ports[who], "/classes")
+    except Exception:
+        return {}
+    return {str(c.get("name")): c for c in (data.get("classes") or []) if c.get("name")}
+
+
+def rep_ranks(who: str, ports: dict) -> dict:
+    """Faction name to rank, from GET /reps. This is the number a class shop checks."""
+    try:
+        data = api(ports[who], "/reps")
+    except Exception:
+        return {}
+    return {str(f.get("name")).lower(): f for f in (data.get("factions") or []) if f.get("name")}
+
+
+def row_for(rows: dict, cls: str) -> dict:
+    """The /classes row for a ladder class, tolerating branch and rare suffixes."""
+    hit = next((n for n in rows if matches(n, cls)), None)
+    return rows.get(hit, {}) if hit else {}
+
+
+def matches(name: str, cls: str) -> bool:
+    s, c = name.lower().strip(), cls.lower().strip()
+    return s == c or s.startswith(c + " ") or s.endswith(" " + c) or (" rank" in s and s.startswith(c))
 
 
 def has(names: list, cls: str) -> bool:
@@ -123,15 +166,37 @@ def main() -> int:
             print("%-15s offline: no client, cannot read the bag" % who)
             continue
         names = bag(who, ports)
-        got = [s[0] for s in LADDER if has(names, s[0])]
-        left = [s for s in LADDER if not has(names, s[0])]
+        ranks = class_rows(who, ports)
+        reps = rep_ranks(who, ports)
+        got = [s[0] for s in LADDER if row_for(ranks, s[0])]
+        left = [s for s in LADDER if not row_for(ranks, s[0])]
         lvl = api(ports[who]).get("level")
-        print("%-15s level %-4s owns %d of %d ladder classes" % (who, lvl, len(got), len(LADDER)))
-        print("          holds: %s" % ", ".join(got) if got else "          holds: nothing on the ladder")
+        if not ranks:
+            print("%-15s level %-4s classes unknown: GET /classes answered nothing (client still loading?)" % (who, lvl))
+            continue
+        print("%-15s level %-4s owns %d of %d ladder classes, %d class items, %d at rank 10"
+              % (who, lvl, len(got), len(LADDER), len(ranks), sum(1 for c in ranks.values() if c.get("rank", 0) >= 10)))
+        print("          holds: %s" % (", ".join("%s r%s" % (n, row_for(ranks, n).get("rank")) for n in got) if got else "nothing on the ladder"))
         for name, script, gate, job, why in (left if args.all else left[:2]):
+            fac = GATE_FACTION.get(name)
+            row = reps.get(fac.lower()) if fac else None
             print("    next: %-20s %-9s %s" % (name, job, script))
-            print("          gate: %s" % gate[:110])
+            if row is not None:
+                if row.get("rank", 0) >= 10:
+                    print("          gate: %s rank %s MEASURED -> the buy is unlocked now" % (fac, row["rank"]))
+                else:
+                    print("          gate: %s rank %s of 10, %s/%s rep to the next rank"
+                          % (fac, row.get("rank"), row.get("rep"), row.get("requiredRep")))
+            else:
+                print("          gate: %s" % gate[:110])
             print("          why : %s" % why[:110])
+        for n in got:
+            row = row_for(ranks, n)
+            if row.get("rank", 10) < 10:
+                print("          rank up: %s is rank %s of 10, %s CP to the next rank"
+                      % (n, row.get("rank"), row.get("nextRankClassPoints", 0) - row.get("classPoints", 0)))
+        gates = ", ".join("%s r%s" % (f, r.get("rank")) for f, r in sorted(reps.items()))
+        print("          factions: %s" % gates[:200])
         for wall, why in WALLS.items():
             hit = [n for n in names if has(names, wall) and wall.lower() in n.lower()]
             if hit:
