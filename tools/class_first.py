@@ -83,7 +83,10 @@ def run_script(port, name):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--accounts", default="not_a_guy,not_a_dumpling,jmd123")
+    # All four accounts are supervised: the three weak ones level, and not_a_grill (100,
+    # class in hand) grinds its Martial Artist rank. Ruled by Jeyson on 2026-11-28:
+    # no story carry until every account sits at level 100.
+    ap.add_argument("--accounts", default="not_a_guy,not_a_dumpling,jmd123,not_a_grill")
     ap.add_argument("--target-level", type=int, default=100)
     ap.add_argument("--poll", type=int, default=90)
     ap.add_argument("--max-minutes", type=int, default=600)
