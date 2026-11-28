@@ -6,3 +6,5 @@ carry.out
 carry.log
 pair*.out
 pair*.log
+.class_first_state.json
+__pycache__/
