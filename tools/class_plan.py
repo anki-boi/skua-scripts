@@ -133,7 +133,10 @@ def main() -> int:
             print("          gate: %s" % gate[:110])
             print("          why : %s" % why[:110])
         for wall, why in WALLS.items():
-            if not has(names, wall):
+            hit = [n for n in names if has(names, wall) and wall.lower() in n.lower()]
+            if hit:
+                print("    wall: %-20s already held as %r (check the rank, the wall is the grind)" % (wall, hit[0]))
+            else:
                 print("    wall: %-20s %s" % (wall, why))
         print(flush=True)
     return 0
