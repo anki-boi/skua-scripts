@@ -83,10 +83,11 @@ def run_script(port, name):
 
 def main():
     ap = argparse.ArgumentParser()
-    # All four accounts are supervised: the three weak ones level, and not_a_grill (100,
-    # class in hand) grinds its Martial Artist rank. Ruled by Jeyson on 2026-11-28:
-    # no story carry until every account sits at level 100.
-    ap.add_argument("--accounts", default="not_a_guy,not_a_dumpling,jmd123,not_a_grill")
+    # Only the three weak accounts are supervised. Ruled by Jeyson on 2026-11-28 at 17:07:
+    # "let not_a_grill do its own thing for now while the others are farming", so the level
+    # 100 account that already owns Void Highlord, Yami no Ronin and Chaos Slayer is left
+    # alone. Cost of that rule: if its client dies, nothing here relaunches it.
+    ap.add_argument("--accounts", default="not_a_guy,not_a_dumpling,jmd123")
     ap.add_argument("--target-level", type=int, default=100)
     ap.add_argument("--poll", type=int, default=90)
     ap.add_argument("--max-minutes", type=int, default=600)
