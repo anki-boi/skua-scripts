@@ -76,13 +76,24 @@ def api(port: int, path: str = "/state"):
     return d if isinstance(d, dict) else {}
 
 
-def owned(who: str, ports: dict) -> set:
-    """Class names in the bag, from the real inventory endpoint."""
+def bag(who: str, ports: dict) -> list:
+    """Item names in the bag, from the real inventory endpoint."""
     try:
         items = api(ports[who], "/inventory").get("items") or []
     except Exception:
-        return set()
-    return {str(i.get("name")) for i in items if i.get("name")}
+        return []
+    return [str(i.get("name")) for i in items if i.get("name")]
+
+
+def has(names: list, cls: str) -> bool:
+    """Is this ladder class owned? AQW stores branch classes as separate items, so the bag holds
+    'Chaos Slayer Mystic', 'Chaos Slayer Berserker' and so on, and never the bare class name."""
+    c = cls.lower().strip()
+    for n in names:
+        s = n.lower().strip()
+        if s == c or s.startswith(c + " ") or s.endswith(" " + c) or (" Rank" in s and s.startswith(c)):
+            return True
+    return False
 
 
 def main() -> int:
@@ -105,16 +116,18 @@ def main() -> int:
         if who not in ports:
             print("%-15s offline: no client, cannot read the bag" % who)
             continue
-        have = owned(who, ports)
-        left = [s for s in LADDER if s[0] not in have]
+        names = bag(who, ports)
+        got = [s[0] for s in LADDER if has(names, s[0])]
+        left = [s for s in LADDER if not has(names, s[0])]
         lvl = api(ports[who]).get("level")
-        print("%-15s level %-4s owns %d of %d ladder classes" % (who, lvl, len(LADDER) - len(left), len(LADDER)))
+        print("%-15s level %-4s owns %d of %d ladder classes" % (who, lvl, len(got), len(LADDER)))
+        print("          holds: %s" % ", ".join(got) if got else "          holds: nothing on the ladder")
         for name, script, gate, job, why in (left if args.all else left[:2]):
             print("    next: %-20s %-9s %s" % (name, job, script))
             print("          gate: %s" % gate[:110])
             print("          why : %s" % why[:110])
         for wall, why in WALLS.items():
-            if wall not in have:
+            if not has(names, wall):
                 print("    wall: %-20s %s" % (wall, why))
         print(flush=True)
     return 0
