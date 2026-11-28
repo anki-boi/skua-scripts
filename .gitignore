@@ -8,3 +8,5 @@ pair*.out
 pair*.log
 .class_first_state.json
 __pycache__/
+.progress_state.json
+progress_report.log
