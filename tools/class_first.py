@@ -90,7 +90,7 @@ def main():
     ap.add_argument("--target-level", type=int, default=100)
     ap.add_argument("--poll", type=int, default=90)
     ap.add_argument("--max-minutes", type=int, default=600)
-    ap.add_argument("--server", default="Sir Ver", help="server to relaunch a dead client on")
+    ap.add_argument("--server", default="Swordhaven (EU)", help="server to relaunch a dead client on (Sir Ver is a premium server, ruled 2026-11-28)")
     ap.add_argument("--login-timeout", type=int, default=180,
                     help="seconds a client may boot before the boot is called login_failed")
     ap.add_argument("--launch-cooldown", type=int, default=900,
@@ -132,7 +132,14 @@ def main():
                 script = (api(port, "GET", "/script", timeout=20).get("data") or {}).get("loadedScript") or ""
                 level = int(st.get("level") or 0)
                 if level >= args.target_level:
-                    if CLASS.split("/")[-1] not in script:
+                    # Any class script the operator started counts as intended work: the
+                    # campaign may want King's Echo before Martial Artist, and a supervisor
+                    # that restarts the target class every pass would cancel it.
+                    other_class = script.startswith("Other/Classes/") and CLASS.split("/")[-1] not in script
+                    if other_class:
+                        print(f"{who}: level {level} -> respecting {script}", flush=True)
+                        ready.append(who)
+                    elif CLASS.split("/")[-1] not in script:
                         print(f"{who}: level {level} -> class script", flush=True)
                         run_script(port, CLASS)
                     ready.append(who)
